@@ -17,12 +17,12 @@ variable netprivate {
 
 ##INSTANCE CONFIGURATION
 
-variable instance_ami {
+variable instanceami {
   default     = "ami-05fb0b8c1424f266b"
   description = "ID da ami"
 }
 
-variable instance_type {
+variable instancetype {
   default     = "t2.micro"
   description = "Tipo da instancia"
 }
