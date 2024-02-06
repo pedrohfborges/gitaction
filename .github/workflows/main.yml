@@ -15,5 +15,8 @@ jobs:
               with:
                  cli_config_credentials_hostname: ${{secrets.USERNAME}}
                  cli_config_credentials_token: ${{secrets.PASSWORD}}
+            - name: Terraform Init
+              id: apply
+              run: terraform apply --auto-approve
                   
             
