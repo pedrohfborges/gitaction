@@ -1,12 +1,12 @@
 ####NET CONFIGURATION
 
 variable vpc {
-  default     = "192.168.0.0/16"
+  default     = "10.1.0.0/16"
   description = "Set VCN IP"
 }
 
 variable netpublic {
-  default     = "192.168.10.0/24"
+  default     = "10.1.1.0/24"
   description = "Set Subnet Public"
 }
 
