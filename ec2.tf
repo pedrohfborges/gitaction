@@ -1,8 +1,5 @@
 resource "aws_instance" "web" {
-  ami           = var.instance-ami
-  instance_type = var.instance-type
-  subnet_id     = aws_subnet.public_subnet.id
-  associate_public_ip_address =  true
+  ami           = var.instance_ami
+  instance_type = var.instance_type
   key_name = "chave-ssh"
-
 }
