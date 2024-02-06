@@ -10,10 +10,10 @@ jobs:
         steps: 
             - name: Checkout
               uses: actions/checkout@v4.1.1 
-            - name: Docker Login
-              uses: docker/login-action@v3.0.0
+            - name: HashiCorp - Setup Terraform
+              uses: hashicorp/setup-terraform@v2.0.3
               with:
-                 username: ${{secrets.USERNAME}}
-                 password: ${{secrets.PASSWORD}}
+                 cli_config_credentials_hostname: ${{secrets.USERNAME}}
+                 cli_config_credentials_token: ${{secrets.PASSWORD}}
                   
             
