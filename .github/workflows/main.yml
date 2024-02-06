@@ -20,13 +20,15 @@ jobs:
               with:
                  cli_config_credentials_hostname: ${{secrets.AWS_SECRET_ACCESS_KEY}}
                  cli_config_credentials_token: ${{secrets.AWS_ACCESS_KEY_ID}}
-            - name: Terraform Destroy
-              id: destroy
-              run: terraform destroy --auto-approve
+
             - name: Terraform Init
               id: init
               run: terraform init -upgrade
   
+            - name: Terraform Destroy
+              id: destroy
+              run: terraform destroy --auto-approve
+
             - name: Terraform Apply
               id: apply
               run: terraform apply --auto-approve
