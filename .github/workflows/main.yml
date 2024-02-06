@@ -11,7 +11,8 @@ jobs:
             - name: Healthy Checkup
             - name: Docker Login
               uses: docker/login-action@v3.0.0
-                  username: pedrohfborges
-                  password: Pedrao@123
+              with:
+                 username: ${{secrets.username}}
+                 password: ${{secrets.password}}
                   
             
