@@ -11,7 +11,7 @@ variable netpublic {
 }
 
 variable netprivate {
-  default     = "192.168.20.0/24"
+  default     = "10.1.2.0/24"
   description = "Set subnet Private"
 }
 
