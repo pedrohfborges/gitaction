@@ -9,6 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
             - name: Healthy Checkup
+              uses: APina03/wait_for_response@2.0  
             - name: Docker Login
               uses: docker/login-action@v3.0.0
               with:
