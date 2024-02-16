@@ -5,7 +5,7 @@ on:
         branches: ["main"]
 
 jobs:
-    build:
+    subir_servidor:
         runs-on: ubuntu-latest
         env:
            AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
@@ -32,5 +32,15 @@ jobs:
             - name: Terraform Apply
               id: apply
               run: terraform apply --auto-approve
+            - name: Instance ID
+              id: instanceid
+              run: terraform show | grep ippublico | cut -d " " -f3 | sed 's/"//g' > inventario
                   
             
+    # configurar-servidor: 
+    #         runs-on: ubuntu-latest
+    #         steps:
+    #            - name: Checkout
+    #              uses: actions/checkout@v4.1.1 
+    #            - name: Ansible
+    #              uses: 
