@@ -1,0 +1,8 @@
+---
+- host: localhost
+  tasks: 
+      - name: "Instalando o Apache"
+        apt:
+            name: 
+            - apache2
+            - mysql-server
