@@ -27,6 +27,14 @@ variable "instancetype" {
   description = "Tipo da instancia"
 }
 
+variable "ingress" {
+  type    = list(any)
+  default = [22, 80, 443]
+
+}
+
+
+
 
 
 
