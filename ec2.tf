@@ -8,9 +8,4 @@ resource "aws_instance" "instancia" {
                 sudo apt install apache2
                 EOF
 
- tags {
-
-    Name = "Primeira Instancia"
- }
-
 }
