@@ -56,5 +56,6 @@ terraform.rc
 *_BASE_*.txt
 *_LOCAL_*.txt
 *_REMOTE_*.txt
+.terraform.lock.hcl
 
 # End of https://www.toptal.com/developers/gitignore/api/git
