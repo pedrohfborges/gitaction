@@ -6,6 +6,7 @@ resource "aws_instance" "instancia" {
                 #!bin/bash
                 sudo apt update
                 sudo apt install apache2 -y
+                echo "Servidor Funcionando" > /var/www/html/index.html
                 EOF
   key_name               = "deployer-key"
   vpc_security_group_ids = ["${aws_security_group.example.id}"]
