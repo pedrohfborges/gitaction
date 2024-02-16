@@ -34,5 +34,13 @@ jobs:
               run: terraform apply --auto-approve
             - name: Instance ID
               id: instanceid
-              run: terraform show | grep ippublico | cut -d " " -f3 | sed 's/"//g' > inventario      
+              run: terraform show | grep ippublico | cut -d " " -f3 | sed 's/"//g' > inventario
+            - name: Run Ansible playbook
+              uses: dawidd6/action-ansible-playbook@v2.8.0
+              with:
+                  playbook: play-book.yml
+                  inventory: inventario
+                  key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqf+WrLkCYjdA32leO+MtOqn+xd+v0d5w4j8FomvCGFxeEMUBLE3HV6wgAIyRRiLbZrZqaP3fjmPIZC2QXVAeIwKLHWEk3rBv/KMYSKbn84TJlbgE+j7ypU65xMRNSM/qWTsCCyt9LQBSMfdlzUHsf1giOcTFlYm2P8puoqRAcg413b9rWKNHRCgMSL+wZfSQNaife7kKG8Plc5aZ10S5J6V6z1C/+scD0tnX9Lv5awMPSlUPQAwQBv7oqLvHYRHhDqTt13OKVUsqYMb8C9taHgFt2gIs701TMYSXYc7HVWPx3aQEPo2MmzrLvfS3AMwQGc1+rX1Aavm6yTOGT+xu4bHC0H26JXEWWksLmJ0C5QV25kV08TDX0y7w8KKJ3lFnOENTLuoA595b3nPr8eMd3xZxqJ2Sn9EQHzsgaMHDu3Cn804lzdJS4Nlkrm0DxNLTw33oMhQpWcnthKK3XECNeO2oraNriUQ4k4e0uu77omHku3fiVv/oyidRYrEltH7E= pedro@bhn2285
+                  
+              
           
