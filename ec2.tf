@@ -7,5 +7,5 @@ resource "aws_instance" "instancia" {
                 sudo apt update
                 sudo apt install apache2
                 EOF
-
+  key_name      = "deployer-key"
 }

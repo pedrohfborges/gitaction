@@ -1,28 +1,28 @@
 ####NET CONFIGURATION
 
-variable vpc {
+variable "vpc" {
   default     = "192.168.0.0/16"
   description = "Set VCN IP"
 }
 
-variable netpublic {
+variable "netpublic" {
   default     = "192.168.30.0/24"
   description = "Set Subnet Public"
 }
 
-variable netprivate {
+variable "netprivate" {
   default     = "192.168.40.0/24"
   description = "Set subnet Private"
 }
 
 ##INSTANCE CONFIGURATION
 
-variable instanceami {
+variable "instanceami" {
   default     = "ami-05fb0b8c1424f266b"
   description = "ID da ami"
 }
 
-variable instancetype {
+variable "instancetype" {
   default     = "t2.micro"
   description = "Tipo da instancia"
 }
