@@ -5,7 +5,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket  = "pedrohfborges-bucket"
+    bucket  = "marina-bucket"
     key     = "terraform-test.tfstate"
     region  = "us-east-2"
     encrypt = true
