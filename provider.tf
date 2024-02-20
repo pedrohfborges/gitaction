@@ -7,7 +7,7 @@ terraform {
   backend "s3" {
     bucket  = "marina-bucket"
     key     = "terraform-test.tfstate"
-    region  = "us-east-2"
+    region  = "us-east-1"
     encrypt = true
   }
 
