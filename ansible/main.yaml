@@ -1,0 +1,21 @@
+---
+- hosts: all
+  tasks:
+    - name: "Instalando dependências e arquivos."
+      apt:
+          name:
+              - zabbix-server-mysql
+              - zabbix-frontend-php
+              - zabbix-agent
+              - python3-pymysql
+              - python3-mysqldb
+              - python3
+      become: yes
+
+    # - name: "Puxando URL"
+    #   get_url:
+    #       url: https://repo.zabbix.com/zabbix/6.5/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.5-1+ubuntu22.04_all.deb
+    #       dest: /root
+    #   become: yes
+          
+
