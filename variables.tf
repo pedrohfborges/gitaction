@@ -34,9 +34,8 @@ variable "ingress" {
 }
 
 variable "keyssh" {
-
-  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD1ZEtqNHrFqGtkRlaI4rASDM/uf34R2wRmEDNp2uPfoJBM+0CfgoAayc7rEovG/ArCq1df4FbswbJ0qDDy0XOSvBm/xeYapyDox6U11ZllpIOb3BzFLg3cVkuiBjI/6sZWIp+OpLHI1WzMvg9tpmqebs52YPk5xOQLp2cHCVONYUfNouOOns4L0kq4HPoOr3yS7uQmADEUnth5k9KrmdWjjk0I8TayoUf3EvMDLrJLHLLXhLrbZ1eZ6F4c2+NOkqRwNAK5RtZ80Y+r84a0+or53iVgXSApg71OpkRk97aMpeutMKen7+WA6bCNtbSMRQG4IB8BwEK4EoBR4xa+PsTZ root@DESKTOP-66QKQU7"
-
+  type        = string
+  description = "Insirir uma chave publica para instanca"
 }
 
 

@@ -31,4 +31,4 @@ jobs:
 
             - name: Terraform Apply
               id: apply
-              run: terraform apply --auto-approve
+              run: terraform apply --auto-approve -var="keyssh=${{ secrets.AWS_PUBLIC_KEY }}"
