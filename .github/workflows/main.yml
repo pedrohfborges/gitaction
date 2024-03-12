@@ -27,7 +27,7 @@ jobs:
   
             - name: Terraform Destroy
               id: destroy
-              run: terraform destroy --auto-approve
+              run: terraform destroy --auto-approve -var="keyssh=${{ secrets.AWS_PUBLIC_KEY }}"
 
             - name: Terraform Apply
               id: apply
