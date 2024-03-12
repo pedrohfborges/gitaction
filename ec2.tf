@@ -5,7 +5,7 @@ resource "aws_instance" "instancia" {
   user_data              = <<-EOF
                 #!bin/bash
                 sudo apt update
-                sudo apt install ansible -y
+                sudo apt install apache2 -y
                 echo "Servidor Funcionando" > /var/www/html/index.html
                 EOF
   key_name               = "deployer-key"
