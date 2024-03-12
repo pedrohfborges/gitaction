@@ -1,0 +1,69 @@
+---
+- hosts: all
+  tasks:
+    - name: "Instalando dependências e arquivos."
+      apt:
+          name:
+              - zabbix-server-mysql
+              - zabbix-frontend-php
+              - zabbix-agent
+              - python3-pymysql
+              - python3-mysqldb
+              - python3
+              - unzip
+              - mysql-server
+      become: yes
+
+    - name: "Puxando URL"
+      get_url:
+          url: https://repo.zabbix.com/zabbix/6.5/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.5-1+ubuntu22.04_all.deb
+          dest: /root
+      become: yes
+
+    - name: "Descompactar o Zabbix"
+      shell:
+        cmd: dpkg -i /root/zabbix-release_6.5-1+ubuntu22.04_all.deb
+      become: yes
+
+
+    - name:
+      mysql_db:
+          name: zabbix
+          state: present
+          login_user: root
+          encoding: utf8mb4 collate utf8mb4_bin;
+          login_unix_socket: /run/mysqld/mysqld.sock
+      become: yes
+
+
+    - name: "Criando Usuario Zabbix"
+      mysql_user:
+          login_user: root
+          name: zabbix
+          password: zabbix
+          priv: "zabbix.*:ALL"
+          state: present
+          host: 
+            - 'localhost'
+            - 127.0.0.1
+      become: yes
+  
+          
+    
+
+
+
+    # - name:
+    #   mysql_variables:
+    #      variable: log_bin_trust_function_creators
+    #      value: 1
+    #   become: yes
+
+
+    # - name: "Setar parâmetro"
+    #   shell: 
+    #       cmd: zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -pmysql -uzabbix -ppassword zabbix
+        
+
+          
+
