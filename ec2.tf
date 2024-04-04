@@ -1,4 +1,4 @@
-resource "aws_instance" "instancia" {
+resource "aws_instance" "instancia" { 
   ami                    = var.instanceami
   instance_type          = var.instancetype
   subnet_id              = aws_subnet.public_subnet.id

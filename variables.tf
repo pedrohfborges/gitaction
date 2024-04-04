@@ -29,13 +29,13 @@ variable "instancetype" {
 
 variable "ingress" {
   type    = list(any)
-  default = [22, 80, 443]
+  default = [22, 80, 443, 3000,3001, 5000]
 
 }
 
 variable "keyssh" {
   type        = string
-  description = "Insirir uma chave publica para instanca"
+  description = "Insirir uma chave publica para instância"
 }
 
 
